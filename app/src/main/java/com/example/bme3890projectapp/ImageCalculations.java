@@ -37,10 +37,11 @@ public class ImageCalculations extends AppCompatActivity /*implements View.OnTou
 
     private ImageView fullImage;
     private GraphView rgbChart;
-    private int bitmapWidth, bitmapHeight;
+    private int bitmapWidth, bitmapHeight, scaledHeight, scaledWidth;
     private BottomNavigationView navView;
+    private double artSize;
 
-    private TextView touchX1, touchY1, touchX2, touchY2;
+    private TextView touchX1, touchY1, touchX2, touchY2, tv_artifactSize;
 
 
     @Override
@@ -51,6 +52,7 @@ public class ImageCalculations extends AppCompatActivity /*implements View.OnTou
 
         fullImage = (ImageView) findViewById(R.id.iv_fullImage);
         rgbChart = (GraphView) findViewById(R.id.gv_graph);
+        tv_artifactSize = (TextView) findViewById(R.id.tv_artifactSize);
         navView = (BottomNavigationView) findViewById(R.id.bnv_navbar);
         navView.setOnNavigationItemSelectedListener(bottomNavMethod);
 
@@ -61,7 +63,6 @@ public class ImageCalculations extends AppCompatActivity /*implements View.OnTou
         Intent imageCalculations = getIntent();
         String currentPhotoPath = imageCalculations.getStringExtra(TakePhoto.NAME_EXTRA);
         String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-
         loginEditor.putString(date, currentPhotoPath);
         loginEditor.apply();
 
@@ -69,6 +70,13 @@ public class ImageCalculations extends AppCompatActivity /*implements View.OnTou
         fullImage.setImageBitmap(imageBitmap);
         bitmapWidth = imageBitmap.getWidth();
         bitmapHeight = imageBitmap.getHeight();
+        scaledHeight = imageBitmap.getScaledHeight(294);
+        scaledWidth = imageBitmap.getScaledWidth(294);
+
+
+        artSize = (bitmapWidth/32.13)/1.335; //32.13 = ratio of pixels to mm, 10 -> converts to cm
+        tv_artifactSize.setText("Artifact diameter: " + artSize + "mm");
+
 
         //touchX1 = (TextView) findViewById(R.id.tv_touchPixelX1);
         //touchY1 = (TextView) findViewById(R.id.tv_touchPixelY1);

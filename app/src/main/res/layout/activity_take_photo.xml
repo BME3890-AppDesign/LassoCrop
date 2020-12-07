@@ -11,18 +11,57 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_marginBottom="50dp"
+        android:elevation="2dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="takeCustomPhoto"
         android:scaleType="fitCenter"
         android:text="Take Photo"
-        android:fontFamily="sans-serif-light"
-        android:onClick="takeCustomPhoto"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:elevation="2dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <androidx.camera.view.PreviewView
-        android:id="@+id/pv_viewFinder"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/pv_viewFinder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="16dp">
+
+
+        </androidx.camera.view.PreviewView>
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/hiclipart_com" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="40dp"
+            android:text="Please fit in a penny exactly into the circular frame on the right while taking a photo of your skin artifact. The penny will help us measure the size of the artifact."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="40dp" />
+
+    </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
