@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/et_newUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="276dp"
+        android:layout_height="44dp"
         android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="Username"
@@ -21,9 +21,9 @@
 
     <EditText
         android:id="@+id/et_newPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_width="276dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -35,14 +35,14 @@
         android:id="@+id/btn_createAccount"
         android:layout_width="141dp"
         android:layout_height="53dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:background="@color/colorBlueMain"
         android:onClick="createAccount"
         android:text="Create Account"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_newPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_securityAnswer" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -58,9 +58,58 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
         android:text="Create Account"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+    <EditText
+        android:id="@+id/et_confirmPassword"
+        android:layout_width="278dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_newPassword" />
+
+    <TextView
+        android:id="@+id/tv_securityQuestion"
+        android:layout_width="211dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:text="Security Question:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_confirmPassword" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="283dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_securityQuestion" />
+
+    <EditText
+        android:id="@+id/et_securityAnswer"
+        android:layout_width="282dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Answer"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>
